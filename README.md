@@ -4,7 +4,7 @@ An actively maintaned fork of the original application to pollute the ISP's data
 
 
 
-# Original ISP Data Pollution README:
+# README (ISP Data Pollution)
 
 Congress's party-line vote will allow ISP's to exploit your family's private data without your consent. See "**[Senate Puts ISP Profits Over Your Privacy](https://www.eff.org/deeplinks/2017/03/senate-puts-isp-profits-over-your-privacy)**".
 
