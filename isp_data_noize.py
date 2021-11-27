@@ -180,6 +180,8 @@ SafeYahoo = SafeWebSearch(search_url='http://search.yahoo.com/search', query_par
                 result_extraction=lambda x: yahoo_search_reprog.findall(uprs.parse_qs(x)['_ylu'][0])[0])
 SafeDuckDuckGo = SafeWebSearch(search_url='http://www.duckduckgo.com/',
                 safe_parameter='kp=1',css_selector='div.result__body')
+SafeYandex = SafeWebSearch(search_url='https://yandex.ru/search/', query_parameter='text',
+                safe_parameter='fyandex=1',css_selector='h2.OrganicTitle')
 
 class ISPDataPollution:
     """
@@ -807,7 +809,7 @@ a fraction of the time. """
         if self.link_count() < self.max_links_cached: self.add_url_links(new_links,url)
 
     def select_random_search_engine(self):
-        self.SafeSearch = random.choice([SafeGoogle, SafeBing, SafeYahoo, SafeDuckDuckGo])
+        self.SafeSearch = random.choice([SafeGoogle, SafeBing, SafeYahoo, SafeDuckDuckGo, SafeYandex])
         return self.SafeSearch
 
     def websearch_links(self):
