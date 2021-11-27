@@ -47,7 +47,7 @@ if importlib.util.find_spec('OpenSSL') is None:
 # headless Raspberry Pi
 try:
     from pyvirtualdisplay import Display
-    display = Display(visible=0, size=(1296,1018))
+    display = Display(visible=0, size=(1366,768))
     display.start()
 except ImportError:
     pass
@@ -99,8 +99,8 @@ for tlf in property_pvals:
 # tell ISP that Debian 11 is being used
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'
 
-# Tor browser size on Linux
-window_size = (1296,1018)
+# see Browser Display Statistics https://www.w3schools.com/browsers/browsers_display.asp
+window_size = (1366,768)
 
 # bias the content with non-random, diverse, link-heavy, popular content
 seed_bias_links = ['http://my.xfinity.com/news',
