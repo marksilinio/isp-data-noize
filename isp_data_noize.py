@@ -457,11 +457,11 @@ please upgrade to at least version {} from http://chromedriver.chromium.org/down
 
     def get_easylist_blacklist(self):
         # Malware lists from open source AdBlock and spam404.com lists
-        malwaredomains_full = 'https://easylist-downloads.adblockplus.org/malwaredomains_full.txt'
+        phishing_list = 'https://phishing.army/download/phishing_army_blocklist_extended.txt'
         spam404_com_adblock_list = 'https://raw.githubusercontent.com/Dawsey21/Lists/master/adblock-list.txt'
         spam404_com_main_blacklist = 'https://raw.githubusercontent.com/Dawsey21/Lists/master/main-blacklist.txt'  # not EasyList format
-        download_list = list(set([malwaredomains_full, spam404_com_adblock_list, spam404_com_main_blacklist]))
-        download_parse = { malwaredomains_full: True, spam404_com_adblock_list: True, spam404_com_main_blacklist: False }
+        download_list = list(set([phishing_list, spam404_com_adblock_list, spam404_com_main_blacklist]))
+        download_parse = { phishing_list: False, spam404_com_adblock_list: True, spam404_com_main_blacklist: False }
 
         for url in download_list:
             resp = urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': self.user_agent}))
