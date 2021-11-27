@@ -96,8 +96,8 @@ for tlf in property_pvals:
     for f in property_pvals[tlf]: tot += abs(property_pvals[tlf][f])
     for f in property_pvals[tlf]: property_pvals[tlf][f] = abs(property_pvals[tlf][f])/tot
 
-# tell ISP that an iPad is being used
-user_agent = 'Mozilla/5.0 (iPad; CPU OS 6_1 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10B141 Safari/8536.25'
+# tell ISP that Debian 11 is being used
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36'
 
 # Tor browser size on Linux
 window_size = (1296,1018)
