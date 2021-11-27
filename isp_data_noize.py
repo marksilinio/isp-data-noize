@@ -297,6 +297,14 @@ please upgrade to at least version {} from http://chromedriver.chromium.org/down
             # Disable image downloads; see https://stackoverflow.com/questions/18657976/disable-images-in-selenium-google-chromedriver
             chrome_options.add_argument('blink-settings=imagesEnabled=false')
             chrome_options.add_argument('mute-audio')
+            # save downloaded files to /dev/null
+            chrome_options.add_experimental_option('prefs',  {
+                    "download.open_pdf_in_system_reader": False,
+                    "download.prompt_for_download": True,
+                    "download.default_directory": "/dev/null",
+                    "plugins.always_open_pdf_externally": False
+                }
+            )
             if self.proxy is not None:
                 chrome_options.add_argument(f'proxy-server={self.proxy}')
             if self.chromedriver_binary_path is None:
