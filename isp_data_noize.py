@@ -277,7 +277,7 @@ images, and respects robots.txt, which all provide good security.
         self.open_driver()
         if self.debug:
             print("{} version is {}, chromedriver version is {}".format(self.driver.capabilities["browserName"],
-                                                              self.driver.capabilities["version"],
+                                                              self.driver.capabilities["browserVersion"],
                                                               self.driver.capabilities["chrome"]["chromedriverVersion"]))
         chromedriver_version = tuple(int(i) for i in
             re.sub(r'([\d.]+?) .*','\\1',self.driver.capabilities["chrome"]["chromedriverVersion"]).split('.'))
