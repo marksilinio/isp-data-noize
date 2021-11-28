@@ -182,6 +182,8 @@ SafeDuckDuckGo = SafeWebSearch(search_url='http://www.duckduckgo.com/',
                 safe_parameter='kp=1',css_selector='div.result__body')
 SafeYandex = SafeWebSearch(search_url='https://yandex.ru/search/', query_parameter='text',
                 safe_parameter='fyandex=1',css_selector='h2.OrganicTitle')
+SafeRambler = SafeWebSearch(search_url='https://nova.rambler.ru/search', query_parameter='query',
+                safe_parameter='adult=family',css_selector='h2.Serp__title--3MDnI')
 
 class ISPDataPollution:
     """
