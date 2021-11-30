@@ -822,7 +822,7 @@ a fraction of the time. """
         # https://github.com/detro/ghostdriver/issues/169
         @self.chromedriver_short_timeout
         def chromedriver_find_elements_by_css_selector():
-            return WebDriverWait(self.driver,short_timeout).until(lambda x: x.find_elements_by_css_selector(self.SafeSearch.css_selector))
+            return WebDriverWait(self.driver,short_timeout).until(lambda x: x.find_elements(by.CSS, selector(self.SafeSearch.css_selector)))
         elements = chromedriver_find_elements_by_css_selector()
         # get links in random order until max. per page
         k = 0
@@ -830,7 +830,7 @@ a fraction of the time. """
         try:
             for elt in sorted(elements,key=lambda k: random.random()):
                 @self.chromedriver_short_timeout
-                def chromedriver_find_element_by_tag_name(): return elt.find_element_by_tag_name('a')
+                def chromedriver_find_element_by_tag_name(): return elt.find_element(by.TAG, name('a'))
                 a_tag = chromedriver_find_element_by_tag_name()
                 @self.chromedriver_short_timeout
                 def chromedriver_get_attribute(): return a_tag.get_attribute('href')
@@ -865,7 +865,7 @@ a fraction of the time. """
         # https://github.com/detro/ghostdriver/issues/169
         @self.chromedriver_short_timeout
         def chromedriver_find_elements_by_tag_name():
-            return WebDriverWait(self.driver,short_timeout).until(lambda x: x.find_elements_by_tag_name('a'))
+            return WebDriverWait(self.driver,short_timeout).until(lambda x: x.find_elements(by.TAG, name('a')))
         elements = chromedriver_find_elements_by_tag_name()
 
         # get links in random order until max. per page
