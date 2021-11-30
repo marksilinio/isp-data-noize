@@ -20,7 +20,7 @@ __author__ = 'stsmith'
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-__version__ = '2.0.1'
+__version__ = '2.0.2'
 
 import argparse as ap, datetime as dt, importlib, numpy as np, numpy.random as npr, os, psutil, random, re, requests, signal, sys, tarfile, time, warnings as warn
 import urllib.request, urllib.robotparser as robotparser, urllib.parse as uprs
@@ -220,7 +220,7 @@ images, and respects robots.txt, which all provide good security.
                  timeout=timeout, diurnal_flag=True,
                  quit_driver_every_call=False,
                  blacklist=True,verbose=True):
-        print(f'This is ISP Data Pollution 🐙💨, Version {__version__}')
+        print(f'This is ISP Data Noize 🐙💨, Version {__version__}')
         self.max_links_cached = max_links_cached
         self.max_links_per_page = max_links_per_page
         self.max_links_per_domain = max_links_per_domain
