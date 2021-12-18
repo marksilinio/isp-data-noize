@@ -530,7 +530,7 @@ Downloaded:  website.com: +LLL/NNNNN links [added], H(domain)= B bits [entropy]
     def domain_entropy(self):
         result = 0.
         domain_count = np.array([(dmn, len(self.domain_links[dmn])) for dmn in self.domain_links])
-        p = np.array([np.float(c) for d, c in domain_count])
+        p = np.array([float(c) for d, c in domain_count])
         count_total = p.sum()
         if count_total > 0:
             p = p / p.sum()
@@ -709,7 +709,7 @@ Downloaded:  website.com: +LLL/NNNNN links [added], H(domain)= B bits [entropy]
         urls = []
         domain_array = np.array([dmn for dmn in self.domain_links])
         domain_count = np.array([len(self.domain_links[domain_array[k]]) for k in range(domain_array.shape[0])])
-        p = np.array([np.float(c) for c in domain_count])
+        p = np.array([float(c) for c in domain_count])
         count_total = p.sum()
         if log_sampling:  # log-sampling [log(x+1)] to bias lower count domains
             p = np.fromiter((np.log1p(x) for x in p), dtype=p.dtype)
@@ -734,7 +734,7 @@ Downloaded:  website.com: +LLL/NNNNN links [added], H(domain)= B bits [entropy]
         domain = None
         domain_array = np.array([dmn for dmn in self.domain_links])
         domain_count = np.array([len(self.domain_links[domain_array[k]]) for k in range(domain_array.shape[0])])
-        p = np.array([np.float(c) for c in domain_count])
+        p = np.array([float(c) for c in domain_count])
         count_total = p.sum()
         if log_sampling:  # log-sampling [log(x+1)] to bias lower count domains
             p = np.fromiter((np.log1p(x) for x in p), dtype=p.dtype)
